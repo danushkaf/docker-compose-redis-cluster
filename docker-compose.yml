@@ -1,0 +1,56 @@
+version: '2'
+services:
+  redis-cluster:
+    build:
+      context: .
+      args:
+        redis_version: '5.0.5'
+    hostname: server
+  redis-node-1:
+    build:
+      context: redis
+      args:
+        PORT: '7000'
+    hostname: server
+    ports:
+      - '7000:7000'
+  redis-node-2:
+    build:
+      context: redis
+      args:
+        PORT: '7001'
+    hostname: server
+    ports:
+      - '7001:7001'
+  redis-node-3:
+    build:
+      context: redis
+      args:
+        PORT: '7002'
+    hostname: server
+    ports:
+      - '7002:7002'
+  redis-node-4:
+    build:
+      context: redis
+      args:
+        PORT: '7003'
+    hostname: server
+    ports:
+      - '7003:7003'
+  redis-node-5:
+    build:
+      context: redis
+      args:
+        PORT: '7004'
+    hostname: server
+    ports:
+      - '7004:7004'
+  redis-node-6:
+    build:
+      context: redis
+      args:
+        PORT: '7005'
+    hostname: server
+    ports:
+      - '7005:7005'
